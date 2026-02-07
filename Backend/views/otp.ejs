@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enter OTP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white p-8 rounded-xl shadow-xl w-full max-w-sm">
+      <h2 class="text-2xl font-semibold mb-6 text-center text-gray-700">
+        🔐 Verify OTP
+      </h2>
+
+     
+
+      <form action="/user/verify_otp" method="POST" class="space-y-4">
+        <input
+          type="text"
+          name="userOTP"
+          maxlength="6"
+          pattern="\d{6}"
+          required
+          placeholder="Enter 6-digit OTP"
+          class="w-full border px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+
+        <button
+          type="submit"
+          class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
+        >
+          Verify OTP
+        </button>
+      </form>
+
+      <p class="text-sm text-center text-gray-500 mt-6">
+        Didn’t receive the code?
+        <a href="/resend-otp" class="text-blue-600 hover:underline">Resend</a>
+      </p>
+    </div>
+  </body>
+</html>
